@@ -1,0 +1,64 @@
+<!--Creación de formulario por TRubilarP-->
+
+<h3 class="text-center m-5">Formulario creación de Proyectos - FCP</h3>
+
+<!--Comienzo Formulario-->
+<form method="post" action="/projects" id="create_forms"  class="container border border-success p-5 bg-white rounded">
+    <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+
+<!--Row campo Nombre Proyecto-->
+<div class="form-group row">
+    <label class="col-sm-4 col-form-label">Nombre Proyecto</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="nameProject" aria-describedby="namelHelp" name="name" placeholder="Ingrese Nombre de Proyecto" >
+      <small id="namelHelp" class="form-text text-muted">Campo obligatorio</small>
+    </div>
+</div>
+<!--Fin Row campo Nombre Proyecto-->
+
+<!--Row campo Descripción-->
+  <div class="form-group row">
+    <label class="col-sm-4 col-form-label">Descripción</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="descriptionProyect" aria-describedby="descriptionlHelp" name="description" placeholder="Descripción del Proyecto" >
+      <small id="descriptionlHelp" class="form-text text-muted">Campo obligatorio</small>
+    </div>
+  </div>
+<!--Fin Row campo Descripción-->
+
+
+<!--Row campo Fecha Comienzo Proyecto-->
+  <div class="form-group row">
+    <label class="col-sm-4 col-form-label">Fecha Comienzo Proyecto</label>
+    <div class="col-sm-10">
+      <input type="date" id="startDate" aria-describedby="startDatelHelp" name="start_date"step="1" min="<%= Time.now.strftime("%Y-%m-%d") %>" max="2050-12-31" value="<%= Time.now.strftime("%Y-%m-%d") %>"> 
+      <small id="startDatelHelp" class="form-text text-muted">Ingresar Fecha de Inicio del Proyecto</small>
+    </div>
+  </div>
+<!--Fin Row campo Fecha Comienzo Proyecto-->
+
+<!--Row campo Fecha Fin Proyecto-->
+  <div class="form-group row">
+    <label class="col-sm-4 col-form-label">Fecha Fin Proyecto</label>
+    <div class="col-sm-10">
+      <input type="date" id="endDate" aria-describedby="endDatelHelp" name="end_date"step="1" min="<%= Time.now.strftime("%Y-%m-%d") %>" max="2050-12-31" value="<%= Time.now.strftime("%Y-%m-%d") %>"> 
+      <small id="endDatelHelp" class="form-text text-muted">Ingresar Fecha de Finalización del Proyecto</small>
+    </div>
+  </div>
+<!--Fin Row campo Fecha Fin Proyecto-->
+
+
+<!-- Comienzo campo Estados del Proyecto-->
+<label class="col-form-label col-sm-2 pt-4">Estado del Proyecto</label>
+   <select name="state">
+        <option value="Propuesta">Propuesta</option>
+        <option value="En Progreso">En Progreso</option>
+        <option value="Terminado">Terminado</option>
+   </select>  
+         <input type="submit" value="Enviar">
+<!--Fin campo Estados del Proyecto-->
+
+</form>
+<!--Fin Formulario-->
+
+    

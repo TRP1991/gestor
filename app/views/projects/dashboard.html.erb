@@ -1,0 +1,35 @@
+<!--Creación de Dashboard por TRubilarP-->
+<h3 class="text-center m-5">Dashboard</h3>
+
+
+<form id="create_project">
+    <select name="state">
+        <option value="Propuesta">Propuesta</option>
+        <option value="En Progreso">En Progreso</option>
+        <option value="Terminado">Terminado</option>
+    </select>
+    <input type="submit" value="Enviar">
+</form>
+
+
+<table>
+
+    <tr>
+        <th>Nombre</th>
+        <th>Descripción</th>
+        <th>Fecha Comienzo</th>
+        <th>Fecha Fin</th>
+        <th>Estado del Proyecto</th>
+    </tr>
+
+    <% @projects.each do |project|%>
+
+        <tr>
+            <td><%= project.name %></td>
+            <td><%= project.description %></td>
+            <td><%= project.start_date %></td>
+            <td><%= project.end_date %></td>
+            <td><%= project.state %></td>
+        </tr>
+    <% end %>
+</table>
